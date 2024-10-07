@@ -1,0 +1,258 @@
+﻿# ===========================================================================
+# Drako Tickets Language Configuration
+# If you find any issues, need support, or have a suggestion for the bot, please join our support server and create a ticket, 
+# http://discord.drakodevelopment.net
+# ===========================================================================
+
+# ===========================================================================
+# BASIC MESSAGES
+# ===========================================================================
+NoPermsMessage: "Nemas permisiju za ove komande."
+SuccessEmbedTitle: "Uspesno"
+ErrorEmbedTitle: "Error je iskocio :("
+NoReason: "Razlog nije naveden!"
+
+# ===========================================================================
+# CRYPTO MESSAGES
+# ===========================================================================
+Crypto:
+  Messages:
+    Pending: 
+      Lang: "Zahteva"
+      Color: "#ADD8E6"
+    Completed:
+      Lang: "Zavrsen"
+      Color: "#00FF00"
+    Cancelled:
+      Lang: "Zatvoren"
+      Color: "#ADD8E6"
+    Transaction: "Not Set"
+  Embed:
+    Title: "Crypto Payment | {coinType}" # Also {coinType_Full}, displays the full coin name, BTC to Bitcoin for example
+    Description:
+      - "> Scan the QR code to make a payment,"
+      - "> or use the below address."
+      - " "
+      - "* **Sale Information**" 
+      - "> **Seller:** {seller}" 
+      - "> **Client:** {client}" 
+      - "> **Service:** {service}" 
+      - "> **Status:** {status}" 
+      - " "
+      - "* **Wallet Information**" 
+      - "> **Wallet:** `{walletAddress}`" 
+      - "> **Amount:** {cryptoAmount} ({currencySymbol}{currencyAmount})" # {currencySymbol} = $, £, etc
+    Footer:
+      Text: "AstralSMP | Crypto Payments"
+      Icon: "https://i.imgur.com/w5XxKpc.png"
+    Author:
+      Text: ""
+      Icon: ""
+    Image: ""
+    Thumbnail: "{coinIcon}" # {qrCode} or {coinIcon}
+    Buttons:
+      - Name: "Submit Transaction"
+        Emoji: "⬆️"
+        Style: "Success" # Primary, Secondary, Success, Danger, Link
+        Type: "SUBMIT"     # PASTE, LINK, QR, SUBMIT
+        Link: "" # Only if LINK type is used
+      - Name: "Get Wallet Address"
+        Emoji: "📥"
+        Style: "Primary" # Primary, Secondary, Success, Danger, Link
+        Type: "PASTE"    # PASTE, LINK, QR, SUBMIT
+        Link: ""         # Only if LINK type is used
+      - Name: "QR Code"
+        Emoji: "📥"
+        Style: "Primary" # Primary, Secondary, Success, Danger, Link
+        Type: "QR"     # PASTE, LINK, QR, SUBMIT
+        Link: "" # Only if LINK type is used
+      - Name: "Terms of Service"
+        Emoji: "📥"
+        Style: "Link" # Primary, Secondary, Success, Danger, Link
+        Type: "LINK"     # PASTE, LINK, QR, SUBMIT
+        Link: "https://google.com" # Only if LINK type is used
+
+Wallets:
+  BTC: "Example" # Wallet Address
+  LTC: "Example" # Wallet Address
+  ETH: "Example" # Wallet Address
+  # Supports more types
+
+
+
+# ===========================================================================
+# PAYPAL MESSAGES
+# ===========================================================================
+# Placeholders
+# {seller}
+# {buyer}
+# {invoiceID}
+# {currency}
+# {price}
+# {service}
+# {status}
+Paypal:
+  Messages:
+    Paid: 
+      Message: "Paid"
+      Color: "#00FF00" # Color of the embed during this status
+    Unpaid: 
+      Message: "Unpaid"
+      Color: "#ADD8E6" # Color of the embed during this status
+    Cancelled: 
+      Message: "The invoice has been cancelled"
+      Color: "#FF0000" # Color of the embed during this status
+    Error: "An error has occurred" 
+  Embed:
+    Title: "Paypal Invoice"
+    Description:
+      - "New Invoice Generated" 
+    Fields:
+      - name: "User"
+        value: "{buyer}"
+        inline: true
+      - name: "Price"
+        value: "{price}"
+        inline: true
+      - name: "Service"
+        value: "{service}"
+        inline: true
+      - name: "Status"
+        value: "{status}"
+        inline: false
+    Footer:
+      Text: "Invoice ID: {invoiceID}"
+      Icon: "https://i.imgur.com/w5XxKpc.png"
+    Author:
+      Text: ""
+      Icon: ""
+    Image: ""
+    Thumbnail: "https://cdn.pixabay.com/photo/2018/05/08/21/29/paypal-3384015_1280.png" 
+    Buttons:
+      Pay:
+        Name: "Pay Invoice"
+        Emoji: "💸"
+      Status:
+        Name: "Update Status"
+        Emoji: "⏱️"
+        Color: "Success"
+
+# ===========================================================================
+# TICKET MESSAGES
+# ===========================================================================
+Tickets:
+  WorkingHours: "Ovaj tiket je podignut van radnog vremena. Molimo sacekajte da se nase radno vreme nastavi.\nNase radno vreme je od {workinghours_start} do {workinghours_end}."
+  Deleting: "Ovaj tiket ce biti obrisan."
+  Deletion: "Ovaj tiket ce biti sad obrisan."
+  DeleteCountDown: "Ovaj tiket ce se zatvoriti za {time} sekundi."
+  Archive: "Ovaj tiket je arhiviran!"
+  Closed: "Ovaj tiket je zatvoren."
+  TicketTypePlaceholder: "Izaberite vas problem"
+  AlreadyOpen: "Vec imate otvoren tiket! Zatvorite ga pre otvaranja drugog."
+  CloseTicketButton: "Zatvori tiket"
+  ReviewAlreadySubmitted: "Vec ste poslali recenziju za ovaj tiket."
+  ReviewTitle: "Pregledajte povratne recenzije"
+  ReviewPlaceholder: "Recite nam zasto ste dali ovu ocenu:"
+  ReviewComplete: "Hvala vam na povratnim recenzijama"
+  TicketReopenTitle: "Otvori ponovo tiket"
+  TicketReopenDescription: "Tiket je ponovo otvoren od strane <@{userId}>."
+  TicketReopen: "Tiket je ponovo otvoren"
+  TranscriptTitle: "Transcript generisan"
+  TranscriptDescription: "Transcript za tiket ID {ticketId} je generisan od strane <@{userId}>."
+  TranscriptReady: "Ovde je vasa transcript za vas tiket:"
+  TranscriptNotEnough: "Nema dovoljno poruka da se generise transcript."
+
+  TicketCreated:
+    LinkText: "Idi na tiket"
+    Embed:
+      Title: "Tiket Kreiran"
+      Description:
+        - "Tvoj tiket je uspesno kreiran. {link}"
+      Footer:
+        Text: ""
+        Icon: ""
+      Author:
+        Text: ""
+        Icon: ""
+      Color: "#00FF00"
+      Image: ""
+      Thumbnail: ""
+    Button: 
+      Text: "Idi na tiket"
+      Emoji: "🟢"
+
+  Blacklisted:
+    Embed:
+      Title: "🚫 Blacklist"
+      Description:
+        - "Blacklistovan si za otvaranje tiketa."
+        - "Kontaktirajte administratora da dobijete unban." 
+        - " "
+        - "> **Blacklistovan od strane:** {user}"
+        - "> **Razlog:** {reason}"
+        - "> **Banovan si:** {time}"
+      Footer:
+        Text: "Kontaktirajte administratora ako mislite da je ovo greska."
+        Icon: "https://e7.pngegg.com/pngimages/1003/312/png-clipart-hammer-game-pension-review-internet-crouton-hammer-technic-discord-thumbnail.png"
+      Author:
+        Text: ""
+        Icon: ""
+      Color: "#FF0000"
+      Image: ""
+      Thumbnail: ""
+
+
+
+# Placeholders
+# {totalTickets}
+# {totalMessages}
+# {totalReviews}
+# {openTickets}
+# {closedTickets}
+# {deletedTickets}
+# {averageRating}
+# {averageClosure}
+# {maxClosure} = Longest closure time
+# {user} = Person who ran the command
+Stats: 
+  Embed:
+    Title: "**Tiket Statistike**"
+    Description:
+      - "Zahtevano od strane {user}"
+    Fields:
+      - name: "Totalno Tiketa"
+        value: "{totalTickets}"
+        inline: true
+      - name: "Totalno poruka"
+        value: "{totalMessages}"
+        inline: true
+      - name: "Totalnih recenzija"
+        value: "{totalReviews}"
+        inline: true
+      - name:  "Otvoreni Tiketi"
+        value: "{openTickets}"
+        inline: true
+      - name: "Zatvoreni tiketi"
+        value: "{closedTickets}"
+        inline: true
+      - name: "Obrisani tiketi"
+        value: "{deletedTickets}"
+        inline: true
+      - name: "Prosecna ocena"
+        value: "{averageRating}"
+        inline: true
+      - name: "Prosecno zatvaranje"
+        value: "{averageClosure}"
+        inline: true
+      - name: "Najduze zatvaranje"
+        value: "{maxClosure}"
+        inline: true
+    Footer:
+      Text: "AstralSMP | Tiket sistem"
+      Icon: "https://i.imgur.com/w5XxKpc.png"
+    Author:
+      Text: ""
+      Icon: ""
+    Color: "#5865F2"
+    Image: "{totalTicketsGraph}" # {totalTicketsGraph} will display a graph of ticket counts for the last 7 days
+    Thumbnail: ""
